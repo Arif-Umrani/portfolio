@@ -153,4 +153,9 @@ body footer .footer-icon {
   display: flex;
   gap: 20px;
   cursor: pointer;
+}
+
+.footer {
+  background: black;
+  color: #f3f3f3;
 }/*# sourceMappingURL=style.css.map */
