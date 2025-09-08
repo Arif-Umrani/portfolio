@@ -1,0 +1,198 @@
+$myBg: #f3f3f3;
+$navColor: black;
+$hoverText: brown;
+$midFont: 25px;
+$myFont: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+@mixin cirlces {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+
+  &:hover {
+    background-color: #f3f3f3;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $myBg;
+  font-family: $myFont;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .logo-circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: orange;
+      }
+
+      .logo-text a {
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+      }
+
+      .logo-text {
+        display: flex;
+        gap: 10px;
+        cursor: text;
+      }
+    }
+
+    nav a {
+      text-decoration: none;
+      color: $navColor;
+      margin: 20px;
+
+      &:hover {
+        color: $hoverText;
+      }
+    }
+  }
+
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+    .profile-img img {
+      border-radius: 50%;
+      width: 500px;
+      height: 500px;
+    }
+
+    .content {
+      margin: 100px;
+      width: 30%;
+
+      h2 {
+        font-size: 100px;
+        font-weight: 500;
+      }
+
+      h4 {
+        font-size: 25px;
+      }
+    }
+
+    .title-circles {
+      display: flex;
+      gap: 10px;
+
+      .circles {
+        @include cirlces;
+        font-size: $midFont;
+        text-decoration: none;
+        color: black;
+        margin-top: 40px;
+      }
+
+      .circle-1 {
+        background-color: #EEA302;
+      }
+
+      .circle-2 {
+        background-color: #FF3B25;
+      }
+
+      .circle-3 {
+        background-color: #80D8DA;
+      }
+    }
+  }
+
+  .resume-container {
+    padding: 100px;
+    margin-left: 100px;
+
+    .page-title {
+      font-size: 40px;
+    }
+
+    .resume-row {
+      display: flex;
+      width: 100%;
+      margin-top: 30px;
+
+      .col-title {
+        width: 40%;
+        height: 200px;
+      }
+
+      .col-date {
+        width: 10%;
+        font-size: 12px;
+      }
+
+      .col-data {
+        width: 30%;
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .project-container {
+    padding: 70px;
+    margin-left: 100px;
+
+    .project-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .col-content {
+        width: 50%;
+        margin-top: 50px;
+        height: 100px;
+      }
+
+      .col-img {
+        width: 50%;
+        margin-top: 40px;
+
+        img {
+          width: 400px;
+          height: 250px;
+        }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+    padding: 50px;
+
+    .footer-icon {
+      display: flex;
+      gap: 20px;
+      cursor: pointer;
+    }
+  }
+}
